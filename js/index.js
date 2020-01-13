@@ -38,13 +38,13 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
+const logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 function findTagNames (obj) {
   console.log(Object.keys(obj));
-  let keyIndex = [];
-  let keyValues = [];
+  const keyIndex = [];
+  const keyValues = [];
   for (key in obj) {
     if (key.includes("nav")) {
       keyIndex.push(key.slice(-1) - 1);
@@ -53,42 +53,42 @@ function findTagNames (obj) {
   }
   return [keyIndex, keyValues];
 }
-let navTags = findTagNames (siteContent.nav);
+const navTags = findTagNames (siteContent.nav);
 
-let aTags = document.querySelectorAll("a");
+const aTags = document.querySelectorAll("a");
 
 function orderedTagNames (arrNumAndVal) {
-  let orderedTags = [];
-  for (let i = 0; i < arrNumAndVal[0].length; i++) {
+  const orderedTags = [];
+  for (const i = 0; i < arrNumAndVal[0].length; i++) {
     if (arrNumAndVal[0][i] === i) {
       orderedTags.push(arrNumAndVal[1][i]);
     }
   }
   return orderedTags;
 }
-let aTagsArr = orderedTagNames(navTags);
+const aTagsArr = orderedTagNames(navTags);
 
 
 function createATags (arr) {
-  for (let i = 0; i < aTags.length; i++) {
+  for (const i = 0; i < aTags.length; i++) {
     aTags[i].innerText = arr[i];
   }
 }
-let createdATags = createATags(aTagsArr);
+const createdATags = createATags(aTagsArr);
 
-let ctaTextH1 = document.querySelector(".cta .cta-text h1");
+const ctaTextH1 = document.querySelector(".cta .cta-text h1");
 ctaTextH1.innerText = siteContent.cta.h1;
 
-let ctaTextBox = document.querySelector(".cta .cta-text");
+const ctaTextBox = document.querySelector(".cta .cta-text");
 
-let ctaTextButton = document.querySelector(".cta .cta-text button");
+const ctaTextButton = document.querySelector(".cta .cta-text button");
 ctaTextButton.innerText = siteContent.cta.button;
 
-let ctaImg = document.getElementById("cta-img"); //
+const ctaImg = document.getElementById("cta-img"); //
 ctaImg.setAttribute('src', siteContent.cta["img-src"])
 
-let mainH4 = document.querySelectorAll(".main-content h4");
-let mainP = document.querySelectorAll(".main-content p");
+const mainH4 = document.querySelectorAll(".main-content h4");
+const mainP = document.querySelectorAll(".main-content p");
 
 console.log(mainH4);
 
@@ -102,7 +102,7 @@ mainH4[1].innerText = siteContent["main-content"]["about-h4"];
 
 mainP[1].innerText = siteContent["main-content"]["about-content"];
 
-let middleImg = document.getElementById("middle-img"); //
+const middleImg = document.getElementById("middle-img"); //
 middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 
 mainH4[2].innerText = siteContent["main-content"]["services-h4"];
@@ -117,30 +117,30 @@ mainH4[4].innerText = siteContent["main-content"]["vision-h4"];
 
 mainP[4].innerText = siteContent["main-content"]["vision-content"];
 
-let contactH4 = document.querySelector(".container .contact h4");
+const contactH4 = document.querySelector(".container .contact h4");
 contactH4.innerText = siteContent.contact["contact-h4"];
 
-let contactP = document.querySelectorAll(".container .contact p");
+const contactP = document.querySelectorAll(".container .contact p");
 contactP[0].innerText = siteContent.contact.address;
 contactP[1].innerText = siteContent.contact.phone;
 contactP[2].innerText = siteContent.contact.email;
 
-let footerP = document.querySelector("footer p");
+const footerP = document.querySelector("footer p");
 footerP.innerText = siteContent.footer.copyright;
 
 
-let nav = document.querySelector("header nav");
+const nav = document.querySelector("header nav");
 // nav.prepend("Portfolio");
 
-let newA = document.createElement("a");
+const newA = document.createElement("a");
 nav.prepend(newA);
 // document.body.container.header.nav.appendChild(newA);
 newA.innerText = "Portfolio";
 newA.href = "#";
 newA.style.color = 'green';
 
-let myHeader = document.querySelector("header nav");
-let newA2 = document.createElement("a");
+const myHeader = document.querySelector("header nav");
+const newA2 = document.createElement("a");
 myHeader.appendChild(newA2);
 newA2.innerText = "Blog";
 newA2.href = "#";
